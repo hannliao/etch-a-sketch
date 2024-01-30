@@ -17,3 +17,7 @@
     background-color: #eaeaea;
     border: 1px solid lightgray;
 }
+
+.colored {
+    background-color: gray;
+}
