@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    background-color: rgb(215, 230, 240);
 }
 
 #container {
@@ -8,14 +9,43 @@
     flex: none;
     width: 640px;
     height: 640px;
-    margin: 0 auto;
+    margin: 30px auto;
 }
 
 .square {
     background-color: #eaeaea;
-    border: 1px solid lightgray;
+    border: 1px solid whitesmoke;
 }
 
 .grayscale {
     background-color: gray;
+}
+
+h1 {
+    color: rgb(232, 195, 200);
+    font-family: "Snell Roundhand", cursive;
+    font-size: 60px;
+    text-align: center;
+    margin: 50px;
+    margin-bottom: 0;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+button {
+    cursor: pointer;
+    color: rgb(50, 50, 50);
+    font-family: "Times New Roman", serif;
+    font-size: 15px;
+    background-color: whitesmoke;
+    padding: 8px 20px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 10px 20px;
+    flex: none;
 }
