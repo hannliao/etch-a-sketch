@@ -42,7 +42,7 @@ function color() {
 }
 
 const grid = document.querySelector("#container");
-const btn = document.querySelector("#squaresPerSide");
+const btn = document.querySelector("#resolution");
 
 // create default 16x16 grid
 let userInput = 16;
