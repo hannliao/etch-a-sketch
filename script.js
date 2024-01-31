@@ -52,17 +52,19 @@ createGrid();
 
 btn.addEventListener("click", () => {
     do {
-        userInput = prompt("enter number of squares per side (max 100): ");
-        if (isValid()) {
+        userInput = prompt("Enter number of squares per side (max 100): ");
+        if (isValid() || userInput === null) {
             break;
         }
     } while (true);
 
-    // create new grid in the same total space as original grid (640px square)
-    squareWidth = 640 / userInput;
-    squareHeight = 640 / userInput;
-    removeSquares();
-    createGrid();
+    if (userInput !==  null) {
+        // create new grid in the same total space as original grid (640px square)
+        squareWidth = 640 / userInput;
+        squareHeight = 640 / userInput;
+        removeSquares();
+        createGrid();
+    }
 });
 
 let r, g, b;
