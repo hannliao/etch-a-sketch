@@ -13,7 +13,12 @@ function createGrid() {
         square.style.height = `${squareHeight}px`;
     
         square.addEventListener("mouseenter", () => {
-            square.classList.add("colored");
+            if (shade == "color") {
+                color();
+                square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            } else {
+                square.classList.add("grayscale");
+            }
         });
         grid.append(square);
     }
@@ -23,6 +28,17 @@ function removeSquares() {
     while (grid.firstChild) {
         grid.removeChild(grid.firstChild);
     }
+}
+
+function clearGrid() {
+    removeSquares();
+    createGrid();
+}
+
+function color() {
+    r = Math.random() * 255;
+    g = Math.random() * 255;
+    b = Math.random() * 255;
 }
 
 const grid = document.querySelector("#container");
@@ -47,4 +63,18 @@ btn.addEventListener("click", () => {
     squareHeight = 640 / userInput;
     removeSquares();
     createGrid();
+});
+
+let r, g, b;
+let shade = "gray";
+const grayBtn = document.querySelector("#gray");
+const colorBtn = document.querySelector("#color");
+
+grayBtn.addEventListener("click", () => {
+    clearGrid();
+    shade = "gray";
+});
+colorBtn.addEventListener("click", () => {
+    clearGrid();
+    shade = "color";
 });
